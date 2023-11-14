@@ -4,13 +4,14 @@ import java.util.Arrays;
 
 public class Yatzy {
 
-    public static int chance(int d1, int d2, int d3, int d4, int d5)
-    {int[] array=new int[]{d1,d2,d3,d4,d5};
+    public static int chance(int d1, int d2, int d3, int d4, int d5){
+   int[] array=new int[]{d1,d2,d3,d4,d5};
        return Arrays.stream(array).sum();
     }
 
-    public static int yatzy(int... dice)
-    {
+    public static int yatzy(int... dice) {
+
+
         int[] counts = new int[6];
         for (int die : dice)
             counts[die-1]++;
@@ -21,52 +22,52 @@ public class Yatzy {
     }
 
     public static int ones(int d1, int d2, int d3, int d4, int d5) {
-        int sum = 0;
-        if (d1 == 1) sum++;
-        if (d2 == 1) sum++;
-        if (d3 == 1) sum++;
-        if (d4 == 1) sum++;
-        if (d5 == 1) 
-            sum++;
-
-        return sum;
+        int[] array=new int[]{d1,d2,d3,d4,d5};
+        int suma = 0;
+        for (int uno:array) {
+            if (uno == 1) {
+                suma++;
+            }
+        }
+        return suma;
     }
 
     public static int twos(int d1, int d2, int d3, int d4, int d5) {
-        int sum = 0;
-        if (d1 == 2) sum += 2;
-        if (d2 == 2) sum += 2;
-        if (d3 == 2) sum += 2;
-        if (d4 == 2) sum += 2;
-        if (d5 == 2) sum += 2;
-        return sum;
+        int[] array = new int[]{d1, d2, d3, d4, d5};
+        int suma = 0;
+        for (int dos : array) {
+            if (dos == 2) {
+                suma = suma + 2;
+            }
+        }
+        return suma;
     }
 
     public static int threes(int d1, int d2, int d3, int d4, int d5) {
-        int s;    
-        s = 0;
-        if (d1 == 3) s += 3;
-        if (d2 == 3) s += 3;
-        if (d3 == 3) s += 3;
-        if (d4 == 3) s += 3;
-        if (d5 == 3) s += 3;
-        return s;
+        int[] array = new int[]{d1, d2, d3, d4, d5};
+        int suma = 0;
+        for (int tres : array) {
+            if (tres == 3) {
+                suma = suma + 3;
+            }
+        }
+        return suma;
     }
 
     protected int[] dice;
-    public Yatzy(int d1, int d2, int d3, int d4, int _5)
+    public Yatzy(int d1, int d2, int d3, int d4, int d5)
     {
         dice = new int[5];
         dice[0] = d1;
         dice[1] = d2;
         dice[2] = d3;
         dice[3] = d4;
-        dice[4] = _5;
+        dice[4] = d5;
     }
 
     public int fours()
     {
-        int sum;    
+        int sum;
         sum = 0;
         for (int at = 0; at != 5; at++) {
             if (dice[at] == 4) {
