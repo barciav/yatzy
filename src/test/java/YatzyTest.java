@@ -1,10 +1,9 @@
 
 import org.gorilas.Yatzy;
-import org.junit.*;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.Assert.*;
 
 public class YatzyTest {
 
@@ -91,7 +90,7 @@ public class YatzyTest {
     public void four_of_a_knd() {
         assertEquals(12, Yatzy.four_of_a_kind(3,3,3,3,5));
         assertEquals(20, Yatzy.four_of_a_kind(5,5,5,4,5));
-        assertEquals(9, Yatzy.three_of_a_kind(3,3,3,3,3));
+        assertEquals(12, Yatzy.four_of_a_kind(3,3,3,3,3));
     }
 
     @Test
